@@ -8,15 +8,16 @@ const scores = [
     {name: 'Khalid', score: 92, grade: null},
     {name: 'Rianne', score: 66, grade: null}
 ];
-
+//
+for (let i = 0; i < scores.length; i++) {
+    console.log(scores[i].score);
+}
 // Verwachtte uitkomsten:
 // 83
 // 77
 // 92
 // 66
 // ==========================================
-
-
 
 
 
@@ -33,9 +34,27 @@ const scores = [
 // ==========================================
 
 
+const scores2 = [
+    {name: 'Max', score: 83, grade: null},
+    {name: 'David', score: 77, grade: null},
+    {name: 'Khalid', score: 92, grade: null},
+    {name: 'Rianne', score: 66, grade: null}
+];
 
-
-
+for (let i = 0; i < scores2.length; i++) {
+    if (scores2[i].score < 60) {
+        scores2[i].grade = "F";
+    } else if (scores2[i].score < 70) {
+        scores2[i].grade =  "D";
+    } else if (scores2[i].score < 80) {
+        scores2[i].grade = "C";
+    } else if (scores2[i].score < 90) {
+        scores2[i].grade = "B";
+    } else if (scores2[i].score < 100) {
+        scores2[i].grade = "A";
+    }
+}
+console.log(scores2);
 // ==========================================
 // Opdracht 1c
 // Breid je script uit door de bijbehorende letter op te slaan in de 'grade'-property van ieder student-object in de array.
@@ -49,20 +68,17 @@ const scores = [
 //  ];
 // ==========================================
 
-
-
-
-
 // ==========================================
 // Opdracht 2
 // Schrijf een script die e-mailadressen genereert voor al onze medewerkers. Sla dit op in een nieuwe property "email" die je toevoegt aan iedere medewerker.
 
-const NOVIEmployees = [
-    {firstName: 'Nova', lastName: 'Eeken'},
-    {firstName: 'Sam', lastName: 'Barnhoorn'},
-    {firstName: 'Tessa', lastName: 'Steur'},
-    {firstName: 'Mark', lastName: 'Rensen'},
-];
+    const NOVIEmployees = [
+        {firstName: 'Nova', lastName: 'Eeken'},
+        {firstName: 'Sam', lastName: 'Barnhoorn'},
+        {firstName: 'Tessa', lastName: 'Steur'},
+        {firstName: 'Mark', lastName: 'Rensen'},
+    ];
+
 
 // Bij NOVI horen de e-mailadressen altijd in het volgende format: voornaam.achternaam@novi.nl
 // Vóór het script zie je de originele objecten,
@@ -75,7 +91,13 @@ const NOVIEmployees = [
 //  ];
 // ==========================================
 
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    const employee = NOVIEmployees[i];
+    const email = `${employee.firstName}.${employee.lastName}@novi.nl`;
+    employee.email = email;
+}
 
+console.log(NOVIEmployees);
 
 
 
@@ -112,8 +134,37 @@ const students = [
     {name: 'Laura', city: 'Utrecht', zipCode: '3531', neighborhood: null},
     {name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: null},
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
+
 ];
 
+for (let i = 0; i < students.length ; i++) {
+
+
+    switch (students[i].zipCode) {
+        case "3513":
+            students[i].neighborhood = "Pijlsweerd";
+            break;
+        case "3514":
+            students[i].neighborhood = "Vogelenbuurt";
+            break;
+        case "3512":
+            students[i].neighborhood = "Binnenstad";
+            break;
+        case "3531":
+            students[i].neighborhood = "Lombok";
+            break;
+        case "3572":
+            students[i].neighborhood = "Wittevrouwen";
+            break;
+        case "3581":
+            students[i].neighborhood = "Oudwijk";
+            break;
+        case "3583":
+            students[i].neighborhood = "Schildersbuurt";
+            break;
+    }
+}
+console.log(students);
 // Verwachte uitkomsten:
 // [
 //     { name: 'Mariska', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
@@ -129,6 +180,7 @@ const students = [
 //     { name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: 'Vogelenbuurt' },
 //     { name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: 'Lombok' }
 // ]
+
 // ==========================================
 
 
